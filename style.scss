@@ -1,0 +1,432 @@
+@import url("https://fonts.googleapis.com/css?family=Merienda|Monoton|Montserrat|Nova+Flat|Poppins&display=swap");
+:root {
+  --var-color-primary: #ff4893;
+  --var-color-dark: #45454d;
+  --var-font-head: "Poppins", sans-serif;
+  --var-font-tag: "Nova Mono", monospace;
+  --var-font-content: "Montserrat", sans-serif;
+  --var-font-logo: "Monoton", cursive;
+  --var-font-heading: "Merienda", cursive;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  p,
+  ul > li > a {
+    font-family: var(--var-font-content);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--var-font-head);
+    font-weight: 600;
+  }
+}
+// HEADER STYLING
+.header_section {
+  .navbar {
+    padding: 0px 370px;
+    .navbar-brand {
+      font-family: var(--var-font-logo);
+      font-size: 2.2rem;
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: #fff;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+// LANDING PAGE STYLING
+.landing_page__area {
+  height: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(images/banner_image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+  .content_box {
+    h1 {
+      font-size: 4.5rem;
+      font-weight: 800;
+      color: #fff;
+      font-family: var(--var-font-heading);
+      letter-spacing: 5px;
+    }
+    p {
+      color: #fff;
+    }
+  }
+}
+// ABOUT US STYLING
+.about_us__area {
+  padding: 120px 0px;
+  background: #fff1e9;
+  .image_box {
+    img {
+      box-shadow: 0px 10px 25px -15px rgba(0, 0, 0, 1);
+      margin-bottom: 10px;
+    }
+  }
+
+  .content_box {
+    span {
+      background: #ff4893;
+      color: #fff;
+      padding: 5px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      // margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 2.5rem;
+      letter-spacing: 4px;
+      font-weight: 800;
+      margin-top: 10px;
+    }
+    p {
+      text-align: justify;
+    }
+  }
+}
+// SERVICES AREA STYLING
+.services_area {
+  padding: 120px 0px;
+  .title_content {
+    margin-bottom: 50px;
+    p {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        width: 30%;
+        transform: translateX(-50%);
+        height: 4px;
+        background: var(--var-color-primary);
+        border-radius: 50%;
+      }
+    }
+  }
+  .content_box {
+    background: linear-gradient(45deg, #fcc0bf, #ff4893);
+    padding: 10px;
+    box-shadow: 0px 10px 35px -20px rgba(0, 0, 0, 1);
+    margin-bottom: 20px;
+    .icon_box {
+      float: left;
+      position: relative;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      top: 20px;
+      border: 2px solid #333;
+      padding: 2px;
+      border-radius: 5px;
+    }
+    .content {
+      display: table-cell;
+      padding: 15px;
+      h2 {
+        text-align: left;
+        font-size: 1.8rem;
+        color: #333;
+      }
+      p {
+        text-align: justify;
+        margin: 0px;
+        color: #fff;
+      }
+    }
+  }
+}
+// GALLERY AREA STYLING
+.gallery_area {
+  padding: 120px 0;
+  background: #fff1e9;
+  .title_area {
+    margin-bottom: 60px;
+    h2 {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        width: 30%;
+        transform: translateX(-50%);
+        height: 4px;
+        background: var(--var-color-primary);
+        border-radius: 50%;
+      }
+    }
+  }
+  .filter {
+    margin-bottom: 20px;
+
+    span {
+      padding: 10px 25px;
+      background: var(--var-color-primary);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      margin: 10px;
+
+      &:hover {
+        background: var(--var-color-dark);
+      }
+    }
+    .active {
+      background: var(--var-color-dark);
+    }
+  }
+  .image_box {
+    position: relative;
+    transition: all 0.5s linear;
+    cursor: pointer;
+    &:hover .overlay_box {
+      opacity: 1;
+      transition: all 0.5s linear;
+      transform: scale(1);
+      border: 10px solid var(--var-color-primary);
+    }
+    .overlay_box {
+      opacity: 0;
+      transition: all 0.5s linear;
+      transform: scale(0);
+    }
+    figure {
+      box-shadow: 0px 10px 20px -22px rgba(0, 0, 0, 1);
+    }
+    .overlay_box {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h3 {
+        color: #fff;
+      }
+      .zoom_icon {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        .fas {
+          color: #fff;
+          font-size: 1.6rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+// TESTIMONIALS AREA STYLING
+.testimonials {
+  padding: 120px 0px;
+
+  .title {
+  }
+  .content_box {
+    position: relative;
+    transition: all 0.3 linear;
+    &:before {
+      content: "";
+      background-image: url("images/left-quote-mark.svg");
+      position: absolute;
+      top: 10px;
+      left: 50px;
+      width: 50px;
+      height: 50px;
+      opacity: 0.2;
+      transition: all 0.2s linear;
+    }
+    &:after {
+      content: "";
+      background-image: url("images/left-quote-mark.svg");
+      position: absolute;
+      bottom: 10px;
+      right: 50px;
+      width: 50px;
+      height: 50px;
+      opacity: 0.2;
+      transform: rotate(180deg);
+      transition: all 0.2s linear;
+    }
+    &:hover {
+      background: var(--var-color-primary);
+      transition: all 0.3s linear;
+    }
+    &:hover p {
+      color: #fff;
+    }
+    &:hover::before {
+      top: -10px;
+      opacity: 0.8;
+      transition: all 0.2s linear;
+    }
+    &:hover::after {
+      bottom: -10px;
+      opacity: 0.8;
+      transition: all 0.2s linear;
+    }
+    text-align: center;
+    background: #3333;
+    padding: 50px;
+    .img_box {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50% !important;
+      overflow: hidden;
+    }
+    p {
+      text-align: justify;
+      margin-top: 20px !important;
+    }
+    h3 {
+      font-size: 1.5rem;
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+// CONTACT AREA STYLNG
+.contact_area {
+  padding: 120px 0;
+  background: #fff1e9;
+  .content_box {
+    table tr td {
+      padding: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+  .form_box {
+    form {
+      .btn {
+        // background: var(--var-color-primary);
+        padding: 8px 50px;
+        border: 2px solid var(--var-color-primary);
+        color: var(--var-color-primary);
+        font-weight: 600;
+        &:hover {
+          background: var(--var-color-primary);
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+// FOOTER AREA STYLING
+.footer_area {
+  height: 50px;
+  background: #262626;
+  color: #fff;
+  line-height: 50px;
+  p {
+    margin: 0;
+  }
+}
+
+// buttons
+.landing_page__area .btn {
+  padding: 8px 50px !important;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  &:hover {
+    background: #fff;
+    color: #444444;
+  }
+}
+// topbtn
+.topbtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  .icon_box {
+    width: 50px;
+    height: 50px;
+    background: #333;
+    text-align: center;
+    line-height: 50px;
+    display: block;
+    a {
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+      display: block;
+      .fas {
+        color: #fff;
+      }
+    }
+  }
+}
+// devices
+
+@media (max-width: 1500px) {
+  .header_section {
+    .navbar {
+      padding: 0px 150px;
+    }
+  }
+  .gallery_area {
+    .filter {
+      span {
+        padding: 8px 12px;
+        margin: 5px;
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  .header_section {
+    .navbar {
+      padding: 0px 10px;
+    }
+  }
+  .gallery_area {
+    .filter {
+      span {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        margin: 1px;
+      }
+    }
+  }
+}
+@media (max-width: 380px) {
+  .header_section {
+    .navbar {
+      padding: 0px 10px;
+    }
+  }
+  .gallery_area {
+    .filter {
+      span {
+        padding: 8px 8px;
+        font-size: 0.8rem;
+        margin: 1px;
+      }
+    }
+  }
+}
